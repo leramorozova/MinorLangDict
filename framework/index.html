@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RutulDict</title>
+
+    <!-- STYLES -->
+    <style>body { padding-top: 76px; max-width: 100%; }</style>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/jquery.dataTables.min.css" rel="stylesheet">
+
+    <!-- Additinal styles for datables -->
+    <style>
+    thead input { 
+    	width: 100%; 
+    }
+    td.details-control {
+    	background: url('images/details_open.png') no-repeat center center;
+    	cursor: pointer;
+    }
+    tr.shown td.details-control {
+    	background: url('images/details_close.png') no-repeat center center;
+    }
+    .dataTables_filter { display: none; }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation menu -->
+    <div role="navigation" class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="index.html" class="navbar-brand">RutulDict</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#exampleModal">Download</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Download the dictionary</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>You can download the dictionary in json/csv.</p>
+          </div>
+          <div class="modal-footer">
+            <a href="data.json" role="button" type="button" class="btn btn-primary" download>Download json</a>
+            <a href="data.csv" role="button" type="button" class="btn btn-primary" download>Download csv</a>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  Main part of the page -->
+    <div style="padding-top: 12px; max-width: 100%;">
+      <div class="container">
+
+
+
+
+        <!-- Title and description of the dictionary -->
+        <h2>Dictionary of the Rutul language</h2>
+        <p>The present dictionary is an online version of Kina Rutul dictionary prepared by Konstantin Filatov and Michael Daniel based on the field recordings they made in 2016-2018. The wordlist derives primarily from the Jena proposal for a unified comparative lexicon of the languages of Daghestan and intends to cover Swadesh list (100 and 200), Kibrik and Kodzasov's thesaurus for Daghestanian languages and some other lexical items, as well as words in the recorded texts. The online version includes basic forms of nouns (singular, plural and forms showing the formation of the oblique stem) and verbs (minimally perfective and imperfective stem). The audio is provided in wav format and includes three repetitions and a recording of the context required by Jena protocol. The Jena wordlist is not yet completed and is being collected in the field.</p>
+        <hr/>
+
+        <!-- Table with data -->
+        <table id="main_table" class="display" style="width:100%">
+          <thead>
+            <tr>
+                <th></th>
+                <th>id</th>
+                <th>transcription</th>
+                <th>part of speech</th>
+                <th>audio</th>
+                <th>English translation</th>
+                <th>Russian translation</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+                <th></th>
+                <th>id</th>
+                <th>transcription</th>
+                <th>part of speech</th>
+                <th>audio</th>
+                <th>English translation</th>
+                <th>Russian translation</th>
+            </tr>
+          </tfoot>
+        </table>
+
+        <!-- Contacts and other information -->
+        <hr>
+        <p>Contacts: Konstantin Filatov (<a href="mailto:triolo@mail.ru">triolo@mail.ru</a>).</p>
+        <p>Technical solution: Anastasia Panova, Elena Sokur, Anna Zueva, Anna Klezovich.</p>
+
+      </div>
+      <hr/>
+
+      <!-- Footer -->
+      <div class="container">
+        <div id="footer" style="margin-bottom: 30px;">
+        	<p>&copy; <a href="https://ling.hse.ru/en/" style="color: black; text-decoration: none;">School of linguistics</a>, NRU HSE 2019| <a href="https://github.com/LingConLab/Rutul_dictionary"><img src="images/github_picture.png"  style="width:25px;height:25px;border:0"> </p>
+        </div>
+      </div>
+    </div>
+
+  <!-- SCRIPTS -->
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap-3.3.5.min.js"></script>
+  <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="js/dataTables.extraSettings.js"></script>
+
+</body>
+</html>
