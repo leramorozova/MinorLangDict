@@ -45,17 +45,22 @@ class DataGenerator:
         self.data.append(word_entry)
 
     def _save_files(self):
-        return
+        if not os.path.isdir(self._output_path):
+            os.makedirs(self._output_path)
+        with open(os.path.join(self._output_path, "data.json"), "w", encoding="UTF-8") as fd:
+            json.dump(self.data, fd, ensure_ascii=False, indent=2)
 
     def makefile(self):
         with open(self._path_to_csv, "r", encoding="UTF-8") as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 self._process_word_entry(row)
+            self.data = {"data": self.data}
         self._save_files()
 
 
 if __name__ == "__main__":
     data_gen = DataGenerator("/home/valeria/Загрузки/lexcauc-concepts-tukita - concepts.csv",
-                             "/home/valeria/git_projects/MinorLangDict/config.json")
+                             "/home/valeria/git_projects/MinorLangDict/config.json",
+                             "./Tukita")
     data_gen.makefile()

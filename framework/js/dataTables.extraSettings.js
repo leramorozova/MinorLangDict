@@ -23,10 +23,13 @@
               },
               { "data": "id" },
               { "data": "transcription" },
-              { "data": "pos" },
-              { "data": "audio" },
-              { "data": "translation" },
-              { "data": "rustranslation" }
+              { "data": "russian" },
+              { "data": "english" },
+              { "data": "poa" },
+              { "data": "supportforms" },
+              { "data": "kk" },
+              { "data": "jena200" },
+              { "data": "gld110" }
           ],
           "order": [[1, 'asc']],
       } );
